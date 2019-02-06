@@ -14,7 +14,9 @@
 # 1. Install and load libraries ----
 
 # Installing R packages
-install.packages("tidyverse")
+#install.packages("tidyverse")
+install.packages("skimr")
+library("skimr")
 
 # Loading R packages
 library("tidyverse")
@@ -29,8 +31,7 @@ library("tidyverse")
 # 2. Load data ----
 raw_data <- readr::read_csv("data/passenger_data.csv")
 
-# This is equivilant but we don't use this! 
-readr::read_csv("data/passenger_data.csv") -> raw_data 
+
 
 # Quick glance at the data
 
@@ -43,8 +44,8 @@ skimr::skim(raw_data)
 
 # Selecting columns 
 
-raw_data %>%
-  dplyr::select()
+selected_data4<-raw_data %>%
+  dplyr::select(1:3)
 
 # Task:
 
